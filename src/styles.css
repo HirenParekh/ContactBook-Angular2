@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+.sign-up-wrapper{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w3-card-2{
+  background-color: white;
+}
+
+input:focus{
+  outline: none;
+}

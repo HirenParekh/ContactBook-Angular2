@@ -1,0 +1,235 @@
+<div class="sign-up-wrapper w3-section w3-container">
+  <div class="w3-card-2 sign-up w3-animate-opacity">
+    <header class="w3-container w3-text-theme">
+      <h2>{{isEditMode?'Edit':'Add'}} Contact</h2>
+    </header>
+    <form class="w3-form" #addForm="ngForm" (ngSubmit)="onFormSubmit(addForm.value,addForm.valid)">
+      <section class="w3-container w3-text-theme">
+        <h4>Basic Details</h4>
+      </section>
+      <div class="w3-row-padding">
+        <!--fName-->
+        <div class="w3-third w3-section">
+          <label for="fName" class="w3-label w3-text-theme">First name</label>
+          <span class="w3-text-orange"
+                *ngIf="fName.errors?.required">*</span>
+          <input type="text"
+                 id="fName"
+                 [(ngModel)]="contact.fName"
+                 #fName="ngModel"
+                 required
+                 name="fName"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--mName-->
+        <div class="w3-third w3-section">
+          <label for="mName" class="w3-label w3-text-theme">Middle name</label>
+          <input type="text"
+                 id="mName"
+                 [(ngModel)]="contact.mName"
+                 #mName="ngModel"
+                 name="mName"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--lName-->
+        <div class="w3-third w3-section">
+          <label for="lName" class="w3-label w3-text-theme">Last name</label>
+          <span class="w3-text-orange"
+                *ngIf="lName.errors?.required">*</span>
+          <input type="text"
+                 id="lName"
+                 [(ngModel)]="contact.lName"
+                 #lName="ngModel"
+                 required
+                 name="lName"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--Email-->
+        <div class="w3-half w3-section">
+          <label for="email" class="w3-label w3-text-theme">Email</label>
+          <span class="w3-text-orange"
+                *ngIf="email.errors?.required">*</span>
+          <input type="email"
+                 id="email"
+                 [(ngModel)]="contact.email"
+                 #email="ngModel"
+                 required
+                 name="email"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--mobile no-->
+        <div class="w3-half w3-section">
+          <label for="mobile" class="w3-label w3-text-theme">Mobile no</label>
+          <span class="w3-text-orange"
+                *ngIf="mobile.errors?.required">*</span>
+          <input type="text"
+                 id="mobile"
+                 [(ngModel)]="contact.mobile"
+                 #mobile="ngModel"
+                 required
+                 name="mobile"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--&lt;!&ndash;password&ndash;&gt;
+        <div class="w3-half w3-section">
+          <label for="password" class="w3-label w3-text-theme">Password</label>
+          <input type="password"
+                 id="password"
+                 ngModel
+                 required
+                 name="password"
+                 class="w3-input w3-transparent">
+        </div>
+        <div class="w3-half w3-section">
+          <label for="confPassword" class="w3-label w3-text-theme">Confirm Password</label>
+          <input type="password"
+                 id="confPassword"
+                 ngModel
+                 required
+                 name="confPassword"
+                 class="w3-input w3-transparent">
+        </div>-->
+        <!--DOB-->
+        <div class="w3-half w3-section">
+          <label for="dob" class="w3-label w3-text-theme">Date of birth</label>
+          <input type="date"
+                 id="dob"
+                 [(ngModel)]="contact.dob"
+                 name="dob"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--Anniversary-->
+        <div class="w3-half w3-section">
+          <label for="anniversary" class="w3-label w3-text-theme">Anniversary</label>
+          <input type="date"
+                 id="anniversary"
+                 [(ngModel)]="contact.anniversary"
+                 name="anniversary"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--Gender-->
+        <div class="w3-half w3-section">
+          <label class="w3-label w3-text-theme">Gender</label>
+          <span class="w3-text-orange"
+                *ngIf="gender.errors?.required">*</span>
+          <p>
+            <input type="radio"
+                   name="gender"
+                   id="male"
+                   [(ngModel)]="contact.gender"
+                   #gender="ngModel"
+                   required
+                   [value]="1"
+                   class="w3-radio"><label for="male">Male</label>
+            <input type="radio"
+                   name="gender"
+                   id="female"
+                   [(ngModel)]="contact.gender"
+                   #gender="ngModel"
+                   required
+                   [value]="2"
+                   class="w3-radio"><label for="female">Female</label>
+          </p>
+        </div>
+      </div>
+      <section class="w3-container w3-text-theme">
+        <h4>Address</h4>
+      </section>
+        <div class="w3-row-padding" ngModelGroup="address">
+          <!--Address1-->
+          <div class="w3-section w3-half">
+            <label class="w3-label w3-text-theme">Address</label>
+            <span class="w3-text-orange"
+                  *ngIf="address1.errors?.required">*</span>
+            <input type="text"
+                   id="address1"
+                   placeholder="line 1"
+                   [(ngModel)]="contact.address.address1"
+                   #address1="ngModel"
+                   required
+                   name="address1"
+                   class="w3-input w3-transparent">
+          </div>
+          <div class="w3-section w3-half">
+            <label class="w3-label w3-text-theme">&nbsp;</label>
+            <input type="text"
+                   id="address2"
+                   placeholder="line 2"
+                   [(ngModel)]="contact.address.address2"
+                   name="address2"
+                   class="w3-input w3-transparent">
+          </div>
+          <!--Country-->
+          <div class="w3-half w3-section">
+            <label for="country" class="w3-label w3-text-theme">Country</label>
+            <span class="w3-text-orange"
+                  *ngIf="country.errors?.required">*</span>
+            <select type="text"
+                    id="country"
+                    required
+                    [(ngModel)]="contact.address.country"
+                    #country="ngModel"
+                    name="country"
+                    (change)="onCountrySelected($event.target.value)"
+                    class="w3-input w3-transparent">
+              <option *ngFor="let country of countryNames"
+                      [value]="country">{{country}}
+              </option>
+            </select>
+          </div>
+          <div class="w3-half w3-section">
+            <label for="city" class="w3-label w3-text-theme">City</label>
+            <span class="w3-text-orange"
+                  *ngIf="city.errors?.required">*</span>
+            <select type="text"
+                    id="city"
+                    required
+                    [(ngModel)]="contact.address.city"
+                    #city="ngModel"
+                    name="city"
+                    class="w3-input w3-transparent">
+              <option *ngFor="let city of cityNames"
+                      [value]="city">{{city}}
+              </option>
+            </select>
+          </div>
+          <!--State-->
+          <div class="w3-half w3-section">
+            <label for="state" class="w3-label w3-text-theme">State</label>
+            <input type="text"
+                   id="state"
+                   [(ngModel)]="contact.address.state"
+                   name="state"
+                   class="w3-input w3-transparent">
+          </div>
+          <!--PinCode-->
+          <div class="w3-half w3-section">
+            <label for="pincode" class="w3-label w3-text-theme">Pin code</label>
+            <span class="w3-text-orange"
+                  *ngIf="pincode.errors?.required">*</span>
+            <input type="text"
+                   id="pincode"
+                   [(ngModel)]="contact.address.pincode"
+                   #pincode="ngModel"
+                   required
+                   name="pincode"
+                   class="w3-input w3-transparent">
+          </div>
+        </div>
+      <p class="w3-section w3-right-align ">
+        <button routerLink="/contacts"
+                class="w3-btn w3-padding-large w3-theme-l2 w3-hover-theme w3-ripple">
+          Cancel
+        </button>
+        <input type="submit"
+               value="Save"
+               class="w3-btn w3-padding-large w3-theme w3-ripple">
+      </p>
+    </form>
+    <!--<pre>
+       value : {{addForm.value | json}}
+       is Valid : {{addForm.valid}}
+      error{{fName.errors | json}}
+     </pre>-->
+  </div>
+</div>

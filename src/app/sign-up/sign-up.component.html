@@ -1,0 +1,109 @@
+<div class="sign-up-wrapper w3-section w3-container">
+  <div class="w3-card-2 sign-up w3-animate-opacity">
+    <header class="w3-container w3-text-theme">
+      <h2>Sign up</h2>
+    </header>
+    <form class="w3-form" #signUpForm="ngForm" (ngSubmit)="onFormSubmit(signUpForm.value,signUpForm.valid)">
+      <div class="w3-row-padding">
+        <!--fName-->
+        <div class="w3-half w3-section">
+          <label for="fName" class="w3-label w3-text-theme">First name</label>
+          <input type="text"
+                 id="fName"
+                 ngModel
+                 required
+                 name="fName"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--lName-->
+        <div class="w3-half w3-section">
+          <label for="lName" class="w3-label w3-text-theme">Last name</label>
+          <input type="text"
+                 id="lName"
+                 ngModel
+                 required
+                 name="lName"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--Email-->
+        <div class="w3-half w3-section">
+          <label for="email" class="w3-label w3-text-theme">Email</label>
+          <input type="email"
+                 id="email"
+                 ngModel
+                 required
+                 name="email"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--mobile no-->
+        <div class="w3-half w3-section">
+          <label for="mobile" class="w3-label w3-text-theme">Mobile no</label>
+          <input type="text"
+                 id="mobile"
+                 ngModel
+                 required
+                 name="mobile"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--password-->
+        <div class="w3-half w3-section">
+          <label for="password" class="w3-label w3-text-theme">Password</label>
+          <input type="password"
+                 id="password"
+                 ngModel
+                 required
+                 name="password"
+                 class="w3-input w3-transparent">
+        </div>
+        <div class="w3-half w3-section">
+          <label for="confPassword" class="w3-label w3-text-theme">Confirm Password</label>
+          <input type="password"
+                 id="confPassword"
+                 ngModel
+                 required
+                 name="confPassword"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--DOB-->
+        <div class="w3-half w3-section">
+          <label for="dob" class="w3-label w3-text-theme">Date of birth</label>
+          <input type="date"
+                 id="dob"
+                 ngModel
+                 required
+                 name="dob"
+                 class="w3-input w3-transparent">
+        </div>
+        <!--Gender-->
+        <div class="w3-half w3-section">
+          <label class="w3-label w3-text-theme">Gender</label>
+          <p>
+            <input type="radio"
+                   name="gender"
+                   id="male"
+                   ngModel
+                   required
+                   value="1"
+                   class="w3-radio"><label for="male">Male</label>
+            <input type="radio"
+                   name="gender"
+                   id="female"
+                   ngModel
+                   required
+                   value="2"
+                   class="w3-radio"><label for="female">Female</label>
+          </p>
+        </div>
+      </div>
+      <p class="w3-center w3-section">
+        <input type="submit"
+               value="Sign up"
+               class="w3-btn-block w3-padding-xlarge w3-theme w3-ripple">
+      </p>
+    </form>
+   <!-- <pre>
+      value : {{signUpForm.value | json}}
+      is Valid : {{signUpForm.valid}}
+    </pre>-->
+  </div>
+</div>
