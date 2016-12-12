@@ -32,7 +32,6 @@ import {AddContactComponent} from "./contacts/components/add-contact/add-contact
         path: 'contacts',
         children: [
           { path: 'add', component:AddContactComponent},
-          { path: 'edit', component:AddContactComponent},
           { path: 'edit/:id', component:AddContactComponent},
           { path: '', component:ContactsComponent}
         ]
